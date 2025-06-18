@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
 
 # Load embeddings from file
 def load_embeddings(path="embeddings.json"):
