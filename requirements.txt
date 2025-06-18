@@ -8,10 +8,9 @@ beautifulsoup4
 html2text
 tqdm
 markdown
+markdownify
+openai
+playwright
 python-multipart
 setuptools
-Flask
-PyPDF2
-sentence-transformers
-scikit-learn
-gunicorn
+chromadb
