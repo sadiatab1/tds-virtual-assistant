@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import os
+import traceback
 import base64
 from PyPDF2 import PdfReader
 from embeddings import embed_text, get_top_match, load_embeddings
@@ -60,6 +61,8 @@ def handle_api():
         })
 
     except Exception as e:
+        print("Error occurred:", e)
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
 @app.route("/", methods=["GET"])
