@@ -5,16 +5,22 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
+# Lazy-load model
+_model = None
+def get_model():
+    global _model
+    if _model is None:
+        _model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
+    return _model
 
-# Load embeddings from file
+# Load embeddings from file only when needed
 def load_embeddings(path="embeddings.json"):
     with open(path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data
+        return json.load(f)
 
 # Generate embedding for user input
 def embed_text(text):
+    model = get_model()
     return model.encode([text])[0]
 
 # Find the closest match
