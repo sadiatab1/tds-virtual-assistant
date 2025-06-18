@@ -1,60 +1,22 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*.so
-
-# Virtual environment
+# Ignore directories
+# Python environment
 venv/
-ENV/
-env/
-.venv/
+_pycache_/
+*.pyc
 
-# VS Code settings
-.vscode/
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-*.swo
-
-# macOS system files
-.DS_Store
-
-# dotenv files
+# API secrets
 .env
-.env.*
 
-# PyCharm
-.idea/
+# SQLite DB (large, private, already generated)
+knowledge_base.db
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+# Scraped data (optional)
+downloaded_threads/
+markdown_files/
 
-# PDF cache
-*.pdf.cache
+# Playwright auth
+auth.json
 
-# Ignore large models or binaries
-*.bin
-*.ckpt
-
-# Ignore embeddings and uploaded files (optional if you recreate them)
-embeddings.json
-uploaded/
+# OS files
+.DS_Store
+Thumbs.db
